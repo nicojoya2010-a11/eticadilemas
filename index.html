@@ -13,33 +13,22 @@
         <h1>BIENVENIDO AL JUEGO</h1>
         <p>Has sido seleccionado como jugador</p>
         <p>Para calcular tu nivel de moral debes de responder a las siguientes preguntas</p>
-        
-        <button onclick="startGame()" class="neon-btn">
-            INICIAR
-            <span></span><span></span><span></span><span></span>
-        </button>
+        <button onclick="startGame()">INICIAR</button>
     </div>
 
     <!-- PANTALLA 2: CASOS -->
     <div id="game-screen" class="leveling-container hidden">
-        <h2 id="case-title"></h2>
-        <p id="case-desc"></p>
+  <h2 id="case-title"></h2>
+  <p id="case-desc"></p>
+  <div id="buttons-container">
+    <button id="btnA"></button>
+    <button id="btnB"></button>
+    <button id="info-btn" class="hola">INFORMACIÓN</button>
 
-        <div id="buttons-container">
-            <button id="btnA" class="neon-btn">
-                <span></span><span></span><span></span><span></span>
-            </button>
+  </div>
+</div>
 
-            <button id="btnB" class="neon-btn">
-                <span></span><span></span><span></span><span></span>
-            </button>
 
-            <button id="info-btn" class="neon-btn">
-                INFORMACIÓN
-                <span></span><span></span><span></span><span></span>
-            </button>
-        </div>
-    </div>
 
     <!-- PANTALLA 3: CÁLCULO -->
     <div id="loading-screen" class="leveling-container hidden">
@@ -63,14 +52,14 @@
         </p>
         <button onclick="location.reload()">REINICIAR</button>
     </dialog>
-
-    <!-- MODAL INFO -->
     <dialog id="info-modal">
-        <button class="close-x" onclick="closeInfo()">✕</button>
-        <h3>Información del caso</h3>
-        <p id="info-text"></p>
-    </dialog>
+  <button class="close-x" onclick="closeInfo()">✕</button>
+  <h3>Información del caso</h3>
+  <p id="info-text"></p>
+</dialog>
 
     <script src="script.js"></script>
 </body>
 </html>
+
+
