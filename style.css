@@ -1,0 +1,232 @@
+body {
+    background-color: #050505;
+    color: #e0e0e0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.leveling-container {
+    background: rgba(10, 10, 15, 0.95);
+    border: 2px solid #00f2ff;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+    padding: 40px;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+h1, h2 {
+    color: #00f2ff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #00f2ff;
+}
+
+.neon-btn {
+  position: relative;
+  display: inline-block;
+  padding: 18px 28px;
+  margin: 15px;
+  color: #03e9f4;
+  background: transparent;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.4s;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.neon-btn:hover {
+  background: #03e9f4;
+  color: #050801;
+  box-shadow: 
+    0 0 5px #03e9f4,
+    0 0 25px #03e9f4,
+    0 0 50px #03e9f4,
+    0 0 120px #03e9f4;
+}
+
+.neon-btn span {
+  position: absolute;
+  display: block;
+}
+
+/* arriba */
+.neon-btn span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: animate1 1s linear infinite;
+}
+
+/* derecha */
+.neon-btn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+/* abajo */
+.neon-btn span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+/* izquierda */
+.neon-btn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes animate1 {
+  0% { left: -100%; }
+  50%,100% { left: 100%; }
+}
+
+@keyframes animate2 {
+  0% { top: -100%; }
+  50%,100% { top: 100%; }
+}
+
+@keyframes animate3 {
+  0% { right: -100%; }
+  50%,100% { right: 100%; }
+}
+
+@keyframes animate4 {
+  0% { bottom: -100%; }
+  50%,100% { bottom: 100%; }
+}
+
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #111;
+    border: 1px solid #444;
+    margin-top: 20px;
+}
+
+#progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #00f2ff, #d400ff);
+    box-shadow: 0 0 10px #7000ff;
+    transition: width 0.1s linear;
+}
+
+dialog {
+    background: #0a0a0a;
+    color: #fff;
+    border: 2px solid #7000ff;
+    padding: 20px;
+    max-width: 400px;
+    text-align: center;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.warning-title {
+    color: #ff0055;
+    text-shadow: 0 0 10px #ff0055;
+}
+
+@media (max-width: 768px) {
+  .leveling-container {
+    width: 92%;
+    height: 60vh;          /* un poco más grande */
+    max-width: 420px;
+    padding: 180px;
+    
+
+    transform: translateY(80vh); /* lo baja hacia el centro */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* ya no centrado vertical */
+
+
+  }
+  #case-title {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#case-desc {
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+
+  h1, h2 {
+    font-size: 1.8rem; 
+    text-align:initial;    /* títulos más grandes en móvil */
+  }
+
+  p {
+    font-size: 1.5rem;    /* texto más legible */
+  }
+
+  button {
+    font-size: 1.05rem;
+    padding: 20px 38px;
+  }
+  #buttons-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+}
+
+.close-x {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+
+.close-x:hover {
+  color: #fff;
+}
+#info-modal {
+  position: relative;
+}
+
+
+

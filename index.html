@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de MORALIDAD</title>
+    <link rel="icon" type="image/x-icon" href="Yin_yang.svg.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- PANTALLA 1: BIENVENIDA -->
+    <div id="welcome-screen" class="leveling-container">
+        <h1>BIENVENIDO AL JUEGO</h1>
+        <p>Has sido seleccionado como jugador</p>
+        <p>Para calcular tu nivel de moral debes de responder a las siguientes preguntas</p>
+        
+        <button onclick="startGame()" class="neon-btn">
+            INICIAR
+            <span></span><span></span><span></span><span></span>
+        </button>
+    </div>
+
+    <!-- PANTALLA 2: CASOS -->
+    <div id="game-screen" class="leveling-container hidden">
+        <h2 id="case-title"></h2>
+        <p id="case-desc"></p>
+
+        <div id="buttons-container">
+            <button id="btnA" class="neon-btn">
+                <span></span><span></span><span></span><span></span>
+            </button>
+
+            <button id="btnB" class="neon-btn">
+                <span></span><span></span><span></span><span></span>
+            </button>
+
+            <button id="info-btn" class="neon-btn">
+                INFORMACIÓN
+                <span></span><span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- PANTALLA 3: CÁLCULO -->
+    <div id="loading-screen" class="leveling-container hidden">
+        <h2>[ CALCULANDO MORALIDAD... ]</h2>
+        <div class="progress-bar">
+            <div id="progress-fill"></div>
+        </div>
+    </div>
+
+    <!-- MODAL DE DECISIÓN -->
+    <dialog id="decision-modal">
+        <p id="modal-text"></p>
+        <button onclick="closeDecisionModal()">CONTINUAR</button>
+    </dialog>
+
+    <!-- MODAL FINAL -->
+    <dialog id="final-modal">
+        <h2 class="warning-title">ADVERTENCIA</h2>
+        <p>
+            “La moral es una herramienta que usamos para convencernos de que actuamos bien, incluso cuando no estamos seguros de ello.”
+        </p>
+        <button onclick="location.reload()">REINICIAR</button>
+    </dialog>
+
+    <!-- MODAL INFO -->
+    <dialog id="info-modal">
+        <button class="close-x" onclick="closeInfo()">✕</button>
+        <h3>Información del caso</h3>
+        <p id="info-text"></p>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
